@@ -15,10 +15,16 @@ public class PlayerMovement : MonoBehaviour
     //Other Script References
     public FirstCollision FC;
 
+    //The Leave Arrow
+    public GameObject LeaveArrow;
+    public bool CanLeave;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        LeaveArrow.SetActive(false);
+        
     }
 
     // Update is called once per frame
@@ -28,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
         movement.x = input * speed * Time.deltaTime;
         transform.Translate(movement);
         Jump();
+        WalkOutDoors();
     }
 
     void Jump()
@@ -74,6 +81,30 @@ public class PlayerMovement : MonoBehaviour
         }
 
         if (collision.gameObject.name == "Back To Surface")
+        {
+            SceneManager.LoadScene(sceneName: "SampleScene");
+        }
+
+        if (collision.gameObject.name == "Front Door")
+        {
+            LeaveArrow.SetActive(true);
+            CanLeave = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.name == "Front Door")
+        {
+            LeaveArrow.SetActive(false);
+            CanLeave = false;
+            
+        }
+    }
+
+    void WalkOutDoors()
+    {
+        if (CanLeave && Input.GetKeyDown(KeyCode.UpArrow))
         {
             SceneManager.LoadScene(sceneName: "SampleScene");
         }

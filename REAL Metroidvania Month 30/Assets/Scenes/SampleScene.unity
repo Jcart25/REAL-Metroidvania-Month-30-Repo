@@ -2306,6 +2306,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3142815951110150623, guid: da88f38be2c5a4348a32f25034544de3, type: 3}
+      propertyPath: LeaveArrow
+      value: 
+      objectReference: {fileID: 3805547664519686529}
     - target: {fileID: 4261069571453899139, guid: da88f38be2c5a4348a32f25034544de3, type: 3}
       propertyPath: SpeechBubble
       value: 
@@ -2359,6 +2363,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da88f38be2c5a4348a32f25034544de3, type: 3}
+--- !u!1 &3805547664519686529 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9040701954615017329, guid: da88f38be2c5a4348a32f25034544de3, type: 3}
+  m_PrefabInstance: {fileID: 3805547664519686528}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
