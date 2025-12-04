@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4661797711887444700}
   - component: {fileID: 8847744237043693064}
   - component: {fileID: 5251150806218184539}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sewer Floor
   m_TagString: Floor
   m_Icon: {fileID: 0}
