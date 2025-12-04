@@ -30,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float input = Input.GetAxisRaw("Horizontal");
+        float input = Input.GetAxisRaw("Horizontal"); //This will be a pain to program, change it to new input type
         movement.x = input * speed * Time.deltaTime;
         transform.Translate(movement);
         Jump();
