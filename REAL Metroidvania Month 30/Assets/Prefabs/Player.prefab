@@ -507,6 +507,13 @@ MonoBehaviour:
   ground:
     serializedVersion: 2
     m_Bits: 8
+  speed: 8
+  jumpingPower: 10
+  airFriction: 0.8
+  groundFriction: 20
+  fallGravMult: 3
+  LowJumpGravMult: 2
+  jumpBufferTime: 0.15
 --- !u!1 &9040701954615017329
 GameObject:
   m_ObjectHideFlags: 0
