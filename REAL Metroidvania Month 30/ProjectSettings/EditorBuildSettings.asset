@@ -20,12 +20,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Side Building Interior.unity
     guid: 060ef227df181d543a62496f24606ea8
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Elevator Base.unity
     guid: 8863c0d300a6a0f45b0a8be5ae5e7641
   - enabled: 1
     path: Assets/Scenes/Elevator.unity
     guid: e89d71843b5dd364eb82d202195281da
+  - enabled: 1
+    path: Assets/Scenes/Root Bridge.unity
+    guid: ef5f357cfba193947bb0ac44babc1c8d
+  - enabled: 1
+    path: Assets/Scenes/CEO Office.unity
+    guid: 3dc0fb550c47bc14db6d03ac8ca53122
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 0c63f6c9fabbc4643bfc712e522df153, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
