@@ -32,6 +32,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CEO Office.unity
     guid: 3dc0fb550c47bc14db6d03ac8ca53122
+  - enabled: 1
+    path: Assets/Scenes/Underground Roots.unity
+    guid: 403bc03152a774b49b488242cc5c2417
+  - enabled: 1
+    path: Assets/Scenes/Throne Room.unity
+    guid: 9efb1a7498ce0974683a7f50ce637422
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 0c63f6c9fabbc4643bfc712e522df153, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}

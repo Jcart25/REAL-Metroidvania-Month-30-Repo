@@ -90,6 +90,11 @@ public class PlayerMovement : MonoBehaviour
             LeaveArrow.SetActive(true);
             CanLeave = true;
         }
+
+        if (collision.gameObject.name == "Throne Room Entrance")
+        {
+            SceneManager.LoadScene(sceneName: "Throne Room");
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
