@@ -10,6 +10,8 @@ public class NEWPlayerMovement : MonoBehaviour
     public LayerMask ground;
 
     private float horizontal;
+    private float Vertical;
+
     [SerializeField] public float speed = 8f;
     [SerializeField] public float jumpingPower = 16f;
     
@@ -25,6 +27,12 @@ public class NEWPlayerMovement : MonoBehaviour
     [SerializeField] private float jumpBufferTime = 0.15f;
     private float jumpBufferCounter;
 
+    //Attack
+    [SerializeField] public GameObject AttackBox;
+    [SerializeField] public bool AttackActive = false;
+    [SerializeField] public float AttackDuration;
+    [SerializeField] private float AttackTimer = 0;
+
     private bool isFacingRight = true;
     private bool isJumpHeld;
 
@@ -34,6 +42,8 @@ public class NEWPlayerMovement : MonoBehaviour
         {
             rb = GetComponent<Rigidbody2D>();
         }
+
+        AttackBox.SetActive(AttackActive);
     }
     private void FixedUpdate()
     {
@@ -65,7 +75,20 @@ public class NEWPlayerMovement : MonoBehaviour
             Flip();
         }
 
-        if(rb.linearVelocity.y < 0f)
+        //Attack
+        if(AttackActive)
+        {
+            AttackBox.SetActive(AttackActive);
+            AttackTimer -= Time.fixedDeltaTime;
+        }
+
+        if (AttackTimer < 0)
+        {
+            AttackActive = false;
+            AttackBox.SetActive(AttackActive);
+        }
+
+        if (rb.linearVelocity.y < 0f)
         {
             rb.gravityScale = fallGravMult;
         } 
@@ -82,6 +105,7 @@ public class NEWPlayerMovement : MonoBehaviour
     public void Move(InputAction.CallbackContext context)
     {
         horizontal = context.ReadValue<Vector2>().x;
+        Vertical = context.ReadValue<Vector2>().y;
     }
     public void Jump(InputAction.CallbackContext context)
     {
@@ -108,6 +132,32 @@ public class NEWPlayerMovement : MonoBehaviour
         isFacingRight = !isFacingRight;
         Vector3 localScale = transform.localScale;
         localScale.x *= -1f;
+        transform.localScale = localScale;
     }
 
+    public void Attack(InputAction.CallbackContext context)
+    {
+        if(context.started)
+        {
+            AttackActive = true;
+            AttackTimer = AttackDuration;
+            
+            if(Vertical > 0.0f)
+            {
+                AttackBox.transform.localPosition = new Vector3(0, 1, 0);
+                AttackBox.transform.localRotation = Quaternion.Euler(0, 0, 90);
+            } 
+            else if(Vertical < 0.0f)
+            {
+                AttackBox.transform.localPosition = new Vector3(0, -1, 0);
+                AttackBox.transform.localRotation = Quaternion.Euler(0, 0, -90);
+            } 
+            else
+            {
+                AttackBox.transform.localPosition = new Vector3(isFacingRight ? 1 : -1, 0, 0);
+                AttackBox.transform.localRotation = Quaternion.Euler(0, 0, isFacingRight ? 0 : 180);
+            }
+        }
+        
+    }
 }
