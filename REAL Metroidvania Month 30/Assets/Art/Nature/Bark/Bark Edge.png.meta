@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 672a0eacb0a50614b9db29e24c02d5e8
+guid: 75478279f936c1e46b812e406d0eca54
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2591918995205686172
-    second: Puff Flower Squish Frame_0
+      213: -9096547447819884905
+    second: Bark Edge_0
+  - first:
+      213: -4257125522838055964
+    second: Bark Edge_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +54,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 200
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -100,13 +103,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Puff Flower Squish Frame_0
+      name: Bark Edge_1
       rect:
         serializedVersion: 2
-        x: 440
-        y: 408
-        width: 1175
-        height: 1306
+        x: 0
+        y: 0
+        width: 400
+        height: 400
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +118,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c9382d3f79858f320800000000000000
-      internalID: 2591918995205686172
+      spriteID: 4e31df664e6abe4c0800000000000000
+      internalID: -4257125522838055964
       vertices: []
       indices: 
       edges: []
@@ -125,7 +128,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: faec77848f7d8494f8ee686d13b6e0f3
+    spriteID: 2cbdb1c0a391a2149aabb272f477fad7
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +138,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Puff Flower Squish Frame_0: 2591918995205686172
+      Bark Edge_0: -9096547447819884905
+      Bark Edge_1: -4257125522838055964
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

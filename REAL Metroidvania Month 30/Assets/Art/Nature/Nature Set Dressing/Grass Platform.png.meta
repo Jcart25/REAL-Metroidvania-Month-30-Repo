@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 672a0eacb0a50614b9db29e24c02d5e8
+guid: da3fcdb1165a86043860cbb7b8fdadac
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2591918995205686172
-    second: Puff Flower Squish Frame_0
+      213: 5739921818549677040
+    second: Grass Platform_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Puff Flower Squish Frame_0
+      name: Grass Platform_0
       rect:
         serializedVersion: 2
-        x: 440
-        y: 408
-        width: 1175
-        height: 1306
+        x: 389
+        y: 429
+        width: 1220
+        height: 286
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c9382d3f79858f320800000000000000
-      internalID: 2591918995205686172
+      spriteID: 0fbea298b7c48af40800000000000000
+      internalID: 5739921818549677040
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: faec77848f7d8494f8ee686d13b6e0f3
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Puff Flower Squish Frame_0: 2591918995205686172
+      Grass Platform_0: 5739921818549677040
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

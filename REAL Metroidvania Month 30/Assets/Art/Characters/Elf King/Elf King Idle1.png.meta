@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 672a0eacb0a50614b9db29e24c02d5e8
+guid: 75a5087e9dc2dd941926fc486ec2c1ff
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2591918995205686172
-    second: Puff Flower Squish Frame_0
+      213: -2463795062765448460
+    second: Elf King Idle1_0
+  - first:
+      213: -8182661530324254142
+    second: Elf King Idle1_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +103,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Puff Flower Squish Frame_0
+      name: Elf King Idle1_1
       rect:
         serializedVersion: 2
-        x: 440
-        y: 408
-        width: 1175
-        height: 1306
+        x: 638
+        y: 395
+        width: 677
+        height: 1269
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +118,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c9382d3f79858f320800000000000000
-      internalID: 2591918995205686172
+      spriteID: 242c4c711b8517e80800000000000000
+      internalID: -8182661530324254142
       vertices: []
       indices: 
       edges: []
@@ -125,7 +128,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: faec77848f7d8494f8ee686d13b6e0f3
+    spriteID: 93b783560d3152c4489c3630ab4f5e7b
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +138,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Puff Flower Squish Frame_0: 2591918995205686172
+      Elf King Idle1_0: -2463795062765448460
+      Elf King Idle1_1: -8182661530324254142
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
