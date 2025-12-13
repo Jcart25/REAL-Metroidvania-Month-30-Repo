@@ -273,9 +273,10 @@ GameObject:
   - component: {fileID: 2941646416880769899}
   - component: {fileID: 8304143361034773886}
   - component: {fileID: 1943033148103660940}
+  - component: {fileID: 3431049898441938874}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -503,6 +504,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: d50120ad-ac07-4fce-9fe4-801881276964
     m_ActionName: 'Player/Attack[/Mouse/leftButton,/Keyboard/f]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 44f579ae-4ed6-43b7-ad4b-e23b7925f516
+    m_ActionName: 'Player/Talk[/Keyboard/upArrow]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -531,6 +536,8 @@ MonoBehaviour:
   groundFriction: 20
   fallGravMult: 3
   LowJumpGravMult: 2
+  isClimbing: 0
+  climbSpeed: 4
   jumpBufferTime: 0.15
   AttackBox: {fileID: 9028345857171562198}
   AttackActive: 0
@@ -558,6 +565,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3431049898441938874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6116409904005488334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e1e8fe9265caa342b6cb52a0a9b4e4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
+  MaxHealth: 10
+  currentHealth: 0
 --- !u!1 &6609986263609207389
 GameObject:
   m_ObjectHideFlags: 0
