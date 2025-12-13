@@ -23,9 +23,13 @@ public class NEWPlayerMovement : MonoBehaviour
     [SerializeField] public float fallGravMult = 3f;
     [SerializeField] public float LowJumpGravMult = 2f;
 
+    //Ladder
+    public bool isClimbing = false;
+    [SerializeField] public float climbSpeed = 4f;
+
     //Jump
     [SerializeField] private float jumpBufferTime = 0.15f;
-    private float jumpBufferCounter;
+    //private float jumpBufferCounter;
 
     //Attack
     [SerializeField] public GameObject AttackBox;
@@ -63,6 +67,11 @@ public class NEWPlayerMovement : MonoBehaviour
         {
             float newX = Mathf.MoveTowards(rb.linearVelocity.x, 0, groundFriction * Time.fixedDeltaTime);
             rb.linearVelocity = new Vector2(newX, rb.linearVelocity.y);
+        }
+
+        if(isClimbing)
+        {
+            rb.linearVelocity = new Vector2(horizontal * speed * 0.5f, Vertical * climbSpeed);
         }
 
         if(!isFacingRight && horizontal > 0f)
@@ -114,6 +123,11 @@ public class NEWPlayerMovement : MonoBehaviour
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpingPower);
         }
 
+        if(context.performed && isClimbing)
+        {
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpingPower * climbSpeed);
+        }
+
         if(context.canceled && rb.linearVelocity.y > 0)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * 0.5f);
@@ -160,4 +174,22 @@ public class NEWPlayerMovement : MonoBehaviour
         }
         
     }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if(collision.CompareTag("Ladder"))
+        {
+            isClimbing = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Ladder"))
+        {
+            isClimbing = false;
+        }
+    }
+
+
 }
