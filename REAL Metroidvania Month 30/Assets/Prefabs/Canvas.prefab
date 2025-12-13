@@ -225,7 +225,6 @@ GameObject:
   - component: {fileID: 2680298659531736474}
   - component: {fileID: 4889771885443817183}
   - component: {fileID: 6862552924558411118}
-  - component: {fileID: 1509883380926824008}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -317,24 +316,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &1509883380926824008
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5130294861641989772}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cec9ed3c5235b6f43b68ff1709089d44, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FirstSceneDialogue
-  DialoguePanel: {fileID: 3520050227376433554}
-  CharacterText: {fileID: 2754052540473951113}
-  CharacterImage: {fileID: 8716818636594622515}
-  DialogueNumber: 0
-  SupervisorTalking: 0
-  FC: {fileID: 0}
 --- !u!1 &6238168128767194965
 GameObject:
   m_ObjectHideFlags: 0
