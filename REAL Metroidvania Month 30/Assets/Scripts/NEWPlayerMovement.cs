@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class NEWPlayerMovement : MonoBehaviour
 {
@@ -37,6 +38,10 @@ public class NEWPlayerMovement : MonoBehaviour
     [SerializeField] public float AttackDuration;
     [SerializeField] private float AttackTimer = 0;
 
+    //Pause
+    [SerializeField] public GameObject pauseScreen;
+    private bool isPaused = false;
+
     private bool isFacingRight = true;
     private bool isJumpHeld;
 
@@ -51,63 +56,66 @@ public class NEWPlayerMovement : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if(Mathf.Abs(horizontal) > 0.01f)
+       if(!isPaused)
         {
-            if (IsGrounded())
+            if (Mathf.Abs(horizontal) > 0.01f)
             {
-                rb.linearVelocity = new Vector2(horizontal * speed, rb.linearVelocity.y);
+                if (IsGrounded())
+                {
+                    rb.linearVelocity = new Vector2(horizontal * speed, rb.linearVelocity.y);
+                }
+                else
+                {
+                    rb.linearVelocity = new Vector2(horizontal * speed * airFriction, rb.linearVelocity.y);
+                }
+            }
+
+            if (IsGrounded() && Mathf.Abs(horizontal) < 0.01f)
+            {
+                float newX = Mathf.MoveTowards(rb.linearVelocity.x, 0, groundFriction * Time.fixedDeltaTime);
+                rb.linearVelocity = new Vector2(newX, rb.linearVelocity.y);
+            }
+
+            if (isClimbing)
+            {
+                rb.linearVelocity = new Vector2(horizontal * speed * 0.5f, Vertical * climbSpeed);
+            }
+
+            if (!isFacingRight && horizontal > 0f)
+            {
+                Flip();
+            }
+
+            else if (isFacingRight && horizontal < 0f)
+            {
+                Flip();
+            }
+
+            //Attack
+            if (AttackActive)
+            {
+                AttackBox.SetActive(AttackActive);
+                AttackTimer -= Time.fixedDeltaTime;
+            }
+
+            if (AttackTimer < 0)
+            {
+                AttackActive = false;
+                AttackBox.SetActive(AttackActive);
+            }
+
+            if (rb.linearVelocity.y < 0f)
+            {
+                rb.gravityScale = fallGravMult;
+            }
+            else if (rb.linearVelocity.y > 0f && !isJumpHeld)
+            {
+                rb.gravityScale = LowJumpGravMult;
             }
             else
             {
-                rb.linearVelocity = new Vector2(horizontal * speed * airFriction, rb.linearVelocity.y);
+                rb.gravityScale = 1.0f;
             }
-        }
-        
-        if(IsGrounded() && Mathf.Abs(horizontal) < 0.01f)
-        {
-            float newX = Mathf.MoveTowards(rb.linearVelocity.x, 0, groundFriction * Time.fixedDeltaTime);
-            rb.linearVelocity = new Vector2(newX, rb.linearVelocity.y);
-        }
-
-        if(isClimbing)
-        {
-            rb.linearVelocity = new Vector2(horizontal * speed * 0.5f, Vertical * climbSpeed);
-        }
-
-        if(!isFacingRight && horizontal > 0f)
-        {
-            Flip();
-        } 
-        
-        else if (isFacingRight && horizontal < 0f)
-        {
-            Flip();
-        }
-
-        //Attack
-        if(AttackActive)
-        {
-            AttackBox.SetActive(AttackActive);
-            AttackTimer -= Time.fixedDeltaTime;
-        }
-
-        if (AttackTimer < 0)
-        {
-            AttackActive = false;
-            AttackBox.SetActive(AttackActive);
-        }
-
-        if (rb.linearVelocity.y < 0f)
-        {
-            rb.gravityScale = fallGravMult;
-        } 
-        else if(rb.linearVelocity.y > 0f && !isJumpHeld)
-        {
-            rb.gravityScale = LowJumpGravMult;
-        }
-        else
-        {
-            rb.gravityScale = 1.0f;
         }
     }
 
@@ -173,6 +181,12 @@ public class NEWPlayerMovement : MonoBehaviour
             }
         }
         
+    }
+
+    public void Pause(InputAction.CallbackContext context)
+    {
+        isPaused = !isPaused;
+        pauseScreen.SetActive(isPaused);
     }
 
     private void OnTriggerStay2D(Collider2D collision)

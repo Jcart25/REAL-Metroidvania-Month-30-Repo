@@ -32,7 +32,7 @@ public class ProjectileBehavior : MonoBehaviour
     {
         if(collision.CompareTag("Player"))
         {
-            collision.GetComponent<EnemyHealth>().Damage(1f);
+            collision.GetComponent<PlayerHealth>().Damage(1f);
             Destroy(gameObject);
         }
     }

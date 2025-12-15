@@ -500,6 +500,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   HitBox: {fileID: 2088356166883298043}
+  isMelee: 1
   AttackActive: 0
   AttackDuration: 0.5
   AttackTimer: 0
+  projectile: {fileID: 2329305312180367711, guid: 56ae839e3d12a6147a0d5653ca5cd86a, type: 3}
+  launcher: {fileID: 8491549876411123231}
+  hasShot: 0

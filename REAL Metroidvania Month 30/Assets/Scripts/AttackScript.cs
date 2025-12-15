@@ -18,7 +18,7 @@ public class AttackScript : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
 
-            collision.GetComponent<EnemyHealth>().Damage(AttackPower);
+            collision.GetComponent<PlayerHealth>().Damage(AttackPower);
         }
     }
 
