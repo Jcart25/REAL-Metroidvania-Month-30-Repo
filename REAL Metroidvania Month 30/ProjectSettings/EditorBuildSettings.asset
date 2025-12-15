@@ -38,6 +38,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Throne Room.unity
     guid: 9efb1a7498ce0974683a7f50ce637422
+  - enabled: 1
+    path: Assets/Scenes/Final Area.unity
+    guid: 2cd38c0fc4568fa41a821f27a35c2f7e
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 0c63f6c9fabbc4643bfc712e522df153, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
