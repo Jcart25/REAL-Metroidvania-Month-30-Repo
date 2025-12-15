@@ -1585,46 +1585,6 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: 202, y: 25, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 0
-      m_TileSpriteIndex: 0
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
-  - first: {x: 203, y: 25, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 0
-      m_TileSpriteIndex: 0
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
-  - first: {x: 204, y: 25, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 0
-      m_TileSpriteIndex: 0
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
-  - first: {x: 205, y: 25, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 0
-      m_TileSpriteIndex: 0
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
   - first: {x: 206, y: 25, z: 0}
     second:
       serializedVersion: 2
@@ -2217,13 +2177,13 @@ Tilemap:
       m_AllTileFlags: 1073741825
   m_AnimatedTiles: {}
   m_TileAssetArray:
-  - m_RefCount: 196
+  - m_RefCount: 192
     m_Data: {fileID: 11400000, guid: 029ff253b1554e44bac7f4ff993315b4, type: 2}
   m_TileSpriteArray:
-  - m_RefCount: 196
+  - m_RefCount: 192
     m_Data: {fileID: -5623194428626525839, guid: 4b3545e2092eebe45a4b7d8f81fe35da, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 196
+  - m_RefCount: 192
     m_Data:
       e00: 1
       e01: 0
@@ -2242,7 +2202,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 196
+  - m_RefCount: 192
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -2506,6 +2466,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2505030248970299132, guid: 329da175414257e4fb2af5f9bd5e8307, type: 3}
+      propertyPath: launcher
+      value: 
+      objectReference: {fileID: 1131889012}
+    - target: {fileID: 2505030248970299132, guid: 329da175414257e4fb2af5f9bd5e8307, type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 2329305312180367711, guid: 56ae839e3d12a6147a0d5653ca5cd86a, type: 3}
     - target: {fileID: 5448796529990221549, guid: 329da175414257e4fb2af5f9bd5e8307, type: 3}
       propertyPath: pointA
       value: 
@@ -2590,6 +2558,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1131889012 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8491549876411123231, guid: 329da175414257e4fb2af5f9bd5e8307, type: 3}
+  m_PrefabInstance: {fileID: 572884204}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1375425676
 GameObject:
   m_ObjectHideFlags: 0

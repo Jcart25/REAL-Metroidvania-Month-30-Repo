@@ -5,9 +5,15 @@ using UnityEngine;
 public class EnemyAttack : MonoBehaviour
 {
     [SerializeField] public GameObject HitBox;
+    [SerializeField] public bool isMelee;
     [SerializeField] public bool AttackActive = false;
     [SerializeField] public float AttackDuration;
     [SerializeField] private float AttackTimer = 0;
+
+    //Projectile
+    [SerializeField] public ProjectileBehavior projectile;
+    [SerializeField] public Transform launcher;
+    public bool hasShot = false;
 
     private void Awake()
     {
@@ -16,23 +22,42 @@ public class EnemyAttack : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (AttackActive)
+        if (!AttackActive) return;
         {
-            HitBox.SetActive(AttackActive);
             AttackTimer -= Time.fixedDeltaTime;
+            
+            if (isMelee)
+            {
+                HitBox.SetActive(AttackActive);
+            } else
+            {
+                if(!hasShot)
+                {
+                    ProjectileBehavior proj = Instantiate(projectile, launcher.position, Quaternion.identity);
+                    float direction = transform.localScale.x > 0 ? 1f : -1f;
+                    proj.Fire(direction);
+                    hasShot = true;
+                }
+                
+            }
+            
         }
 
-        if (AttackTimer < 0)
+        if (AttackTimer <= 0)
         {
-            AttackActive = false;
-            HitBox.SetActive(AttackActive);
-            
+            AttackEnd();
         }
     }
 
+    private void AttackEnd()
+    {
+        AttackActive = false;
+        hasShot = false;
+        HitBox.SetActive(AttackActive);
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") && !AttackActive)
         {
             AttackActive = true;
             AttackTimer = AttackDuration;
