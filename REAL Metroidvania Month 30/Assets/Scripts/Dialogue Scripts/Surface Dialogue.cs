@@ -104,18 +104,14 @@ public class SurfaceDialogue : MonoBehaviour
                 break;
 
             case 5:
-                CharacterText.text = "Right. Your assignment right now is to check on the CEO. The main entrance is blocked off, so you'll have to go from that building over there.";
+                CharacterText.text = "Right. Your assignment right now is to check on the CEO. The building is crawling with these plant freaks, so be careful.";
                 break;
 
             case 6:
-                CharacterText.text = "Once you get to the roof, there should be a window of the main building that you can jump through.";
-                break;
-
-            case 7:
                 CharacterText.text = "Well what are you waiting for?! Go?!";
                 break;
 
-            case 8:
+            case 7:
                 DialoguePanel.SetActive(false);
                 NEWTalkToSupervisor = false;
                 NEWSupervisorTalk = false;
